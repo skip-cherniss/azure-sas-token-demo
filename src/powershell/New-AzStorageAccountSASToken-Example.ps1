@@ -40,7 +40,8 @@ $ctx = $storageAccount.Context
 
 $sasTokenService = `
 New-AzStorageAccountSASToken `
-    -Service Table -ResourceType Service,Container,Object `
+    -Service Table `
+    -ResourceType Service,Container,Object `
     -Permission "rwdlacu" `
     -StartTime $StartTime `
     -ExpiryTime $ExpiryTime `
@@ -50,13 +51,21 @@ New-AzStorageAccountSASToken `
 # https://docs.microsoft.com/en-us/rest/api/storageservices/create-account-sas?redirectedfrom=MSDN
 
 <#
+
 ?sv=2020-04-08
+
 &ss=t
+
 &srt=sco
+
 &st=2021-09-26T01%3A41%3A01Z
+
 &se=2021-09-27T01%3A41%3A01Z
+
 &sp=rwdlacu
+
 &sig=53sj6qOnEZHUoHf0GDR5dChhVNq52MWeS9cCpaZbOnc%3D
+
 #>
     
 # Use the TableEndPoint property to construct the Table SAS Uri
